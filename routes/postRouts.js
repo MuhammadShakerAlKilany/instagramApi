@@ -33,7 +33,7 @@ router.route("/posts/loves/:id/:userId").patch(async(req,res)=>{
 router.route("/posts/photo/:id").get(async(req,res)=>{
     const user = await postSchema.findById(req.params.id)
     res.sendFile(user.photoPath,{
-      root: path.join(__dirname)
+      root: path.join(__dirname, "../")
   })
     
     
