@@ -1,8 +1,10 @@
 const {Router} = require("express") 
+const path = require("path")
 const router = Router()
 const postSchema = require("../modules/posts")
 const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
+
 
 router.route("/posts").get(async(req,res)=>{
     const posres = await postSchema.find()
