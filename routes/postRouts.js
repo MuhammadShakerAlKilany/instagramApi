@@ -1,7 +1,6 @@
 const {Router} = require("express") 
 const path = require("path")
 const router = Router()
-const path = require("path")
 const postSchema = require("../modules/posts")
 const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
