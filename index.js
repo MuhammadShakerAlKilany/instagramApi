@@ -3,12 +3,15 @@ const path = require("path")
 const fs = require("fs").promises
 const clc = require("cli-color");
 const express = require('express')
+var cors = require('cors')
 const usersSchema = require("./modules/users")
 const app = express()
 const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser')
+app.use(cors())
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use((req,res,next)=>{
   let method  
@@ -67,7 +70,6 @@ app.route("/api/v1/users/photo/:id").get(async(req,res)=>{
   
   return
 })
-
 
 mongoose.connect(process.env.DBURL)
   .then(() => console.log(clc.cyan('Connected!')));
