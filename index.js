@@ -70,7 +70,7 @@ app.route("/api/v1/users/photo/:id").get(async(req,res)=>{
   
   return
 })
-
+app.use("/api/v1",require("./routes/postRouts"))
 mongoose.connect(process.env.DBURL)
   .then(() => console.log(clc.cyan('Connected!')));
 app.listen(process.env.PORT, () => {
