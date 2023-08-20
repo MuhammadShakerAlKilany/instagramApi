@@ -4,7 +4,12 @@ const usersSchema = new Schema({
     userName:String,
     email:String,
     password:String,
-    photoPath:String
+    photoPath:String,
+  follows:{
+        
+    type:[Schema.Types.ObjectId],
+        default:[]
+}
 
 })
 
